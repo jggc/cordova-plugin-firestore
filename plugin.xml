@@ -44,8 +44,8 @@
       </feature>
     </config-file>
 
-    <preference name="ANDROID_FIREBASE_CORE_VERSION" default="16.0.4"/>
-    <preference name="ANDROID_FIREBASE_FIRESTORE_VERSION" default="17.1.1"/>
+    <preference name="ANDROID_FIREBASE_CORE_VERSION" default="17.2.1"/>
+    <preference name="ANDROID_FIREBASE_FIRESTORE_VERSION" default="21.2.1"/>
     <framework src="com.google.firebase:firebase-core:$ANDROID_FIREBASE_CORE_VERSION"/>
     <framework src="com.google.firebase:firebase-firestore:$ANDROID_FIREBASE_FIRESTORE_VERSION"/>
     <framework src="com.google.code.gson:gson:2.8.2"/>
@@ -123,7 +123,14 @@
       </feature>
     </config-file>
 
-    <framework src="Firebase/Firestore" type="podspec" spec=""/>
+    <podspec>
+      <config>
+        <source url="https://github.com/CocoaPods/Specs.git"/>
+      </config>
+      <pods use-frameworks="true">
+        <pod name="Firebase/Firestore" spec="~> 6.3.0" />
+      </pods>
+    </podspec>
 
     <header-file src="src/ios/FirestorePlugin.h"/>
     <source-file src="src/ios/FirestorePlugin.m"/>
